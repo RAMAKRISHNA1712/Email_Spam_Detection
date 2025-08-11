@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Spam Detection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #1a202c;
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 2.2em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 160px;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #cbd5e0;
+      border-radius: 8px;
+      resize: vertical;
+      transition: border-color 0.3s;
+    }
+
+    textarea:focus {
+      border-color: #4299e1;
+      outline: none;
+    }
+
+    button {
+      background: #4299e1;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: #2b6cb0;
+      transform: scale(1.05);
+    }
+
+    .result {
+      margin-top: 25px;
+      padding: 15px;
+      background: #f0fff4;
+      color: #2f855a;
+      border: 1px solid #c6f6d5;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Email Spam Classifier</h1>
+    <form id="spamForm">
+      <textarea name="email_text" placeholder="Paste your email content here..."></textarea>
+      <button type="button" onclick="showResult()">Check</button>
+    </form>
+    <div id="result" class="result" style="display: none;"></div>
+  </div>
+
+  <script>
+    function showResult() {
+      const text = document.querySelector('textarea').value.trim();
+      const resultDiv = document.getElementById('result');
+
+      if (text === "") {
+        resultDiv.textContent = "Please enter some email text.";
+        resultDiv.style.display = "block";
+        resultDiv.style.background = "#fff5f5";
+        resultDiv.style.color = "#c53030";
+        resultDiv.style.borderColor = "#feb2b2";
+      } else {
+        resultDiv.textContent = "This is a static preview page and does not perform spam detection. To run the full email spam classifier with predictions, please clone the repository and follow the instructions provided in the README file.";
+        resultDiv.style.display = "block";
+        resultDiv.style.background = "#f0fff4";
+        resultDiv.style.color = "#2f855a";
+        resultDiv.style.borderColor = "#c6f6d5";
+      }
+    }
+  </script>
+</body>
+
+</html>
