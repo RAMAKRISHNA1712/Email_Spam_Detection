@@ -1,7 +1,3 @@
-# Email_Spam_Detection
-
----
-
 # Email Spam Detection Using Machine Learning
 
 This project demonstrates how to build a machine learning model to detect spam emails using natural language processing techniques. The model classifies emails as either **spam** (unwanted or malicious emails) or **ham** (legitimate emails).
